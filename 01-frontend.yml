@@ -8,7 +8,7 @@
         state: latest
 
     - name: Remove directory
-        ansible.builtin.file:
+      ansible.builtin.file:
           path: /usr/share/nginx/html
           state: absent
 
@@ -19,7 +19,7 @@
 
 
     - name: Download & extract frontend
-            ansible.builtin.unarchive:
+      ansible.builtin.unarchive:
               src: https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
               dest: /usr/share/nginx/html
               remote_src: yes
