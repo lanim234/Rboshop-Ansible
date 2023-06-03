@@ -1,0 +1,40 @@
+- name: Configuring NodeJS Repos
+  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x
+
+- name: Install MongoDB Server
+  ansible.builtin.yum:
+    name: nodejs
+    state: installed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  app_presetup
+  
+  status-check
+  
+  echo -e "${color} Install NodeJS Dependencies${nocolor}"
+  npm install &>>${log_file}
+  
+  status_check
+  
+  systemD_setup
+  
+  status_check
