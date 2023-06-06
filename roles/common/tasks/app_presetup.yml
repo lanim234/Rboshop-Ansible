@@ -2,7 +2,7 @@
   ansible.builtin.user:
     name: roboshop
 
-- name: Remove directory
+- name: Remove old app directory
   ansible.builtin.file:
     path: /app
     state: absent
@@ -11,3 +11,9 @@
   ansible.builtin.file:
     path: /app
     state: directory
+
+- name: Downlaod and extract app content
+  ansible.builtin.unarchive:
+    src: https://roboshop-artifacts.s3.amazonaws.com/{{ component }}.zip
+    dest: /app
+    remote_src:yes
